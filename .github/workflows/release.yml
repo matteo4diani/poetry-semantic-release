@@ -39,4 +39,11 @@ jobs:
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            semantic-release version
+            semantic-release version --no-vcs-release
+            git fetch --tags
+            VERSION="${{ steps.release-status.outputs.tag }}"
+            MAJOR=${VERSION%%.*}
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git tag -fa ${MAJOR} -m "Update major version tag"
+            git push origin ${MAJOR} --force
