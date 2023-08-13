@@ -2,6 +2,19 @@
 
 
 
+## v0.1.5 (2023-08-13)
+
+### Fix
+
+* fix: add correct ref to main, avoid fetching before semantic-release ([`ef59538`](https://github.com/matteo4diani/poetry-semantic-release/commit/ef59538ec2a8c9fbcda87fed8fc0f93c12d75902))
+
+* fix: use rebase instead of pull ([`7fb3cc6`](https://github.com/matteo4diani/poetry-semantic-release/commit/7fb3cc6b95bae38ef56c93afc250d96c8bd19ce3))
+
+* fix: pull main before semantic-release ([`03d3343`](https://github.com/matteo4diani/poetry-semantic-release/commit/03d3343cb2ee73ddfe270ddcbb231f70119f2a91))
+
+* fix: add reference to main branch in checkout step ([`ccd7cdb`](https://github.com/matteo4diani/poetry-semantic-release/commit/ccd7cdb830c0c4d0f842552a1563b8adee26aa33))
+
+
 ## v0.1.4 (2023-08-13)
 
 ### Ci
