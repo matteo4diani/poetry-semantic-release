@@ -1,0 +1,25 @@
+name: Dispatch Test Worfklow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  Dispatch:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    concurrency: release
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'matteo4diani',
+              repo: 'poetry-semantic-release-test',
+              workflow_id: 'test.yml',
+              ref: 'main'
+            })

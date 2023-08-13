@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "poetry-semantic-release"
+version = "0.0.0"
+description = "poetry-semantic-release action"
+authors = ["Matteo Fordiani <matteofordiani@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:tool.poetry.version"
+]
+
+branch = "main"
+upload_to_PyPI = false
+upload_to_release = true
+build_command = "echo 'Building...'"
+commit_author = "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+    "build",
+    "chore",
+    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "style",
+    "refactor",
+    "test"
+]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
