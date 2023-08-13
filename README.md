@@ -1,12 +1,10 @@
 ![Tests](https://github.com/matteo4diani/poetry-semantic-release-test/actions/workflows/test.yml/badge.svg)
 ![Release](https://github.com/matteo4diani/poetry-semantic-release/actions/workflows/release.yml/badge.svg)
 
-# Poetry Semantic Release
-A composite GitHub Action to release simple Python packages on GitHub and PyPI following semantic versioning and conventional commits.
+# semantic-poetry 🪶
+[semantic-poetry](https://github.com/marketplace/actions/semantic-poetry) is a GitHub Action that automates the release of [poetry](https://python-poetry.org/)-based Python packages on GitHub and PyPI following [semantic versioning](https://semver.org) and [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) standards.
 
 ## Usage
-
-This action automates [semantic versioning](https://semver.org) and distribution of Python projects by leveraging [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary).
 
 To use it in your CI:
 1. Generate a PyPI Token from PyPI: https://pypi.org/help/#apitoken
