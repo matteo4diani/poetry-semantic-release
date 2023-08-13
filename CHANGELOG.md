@@ -2,6 +2,17 @@
 
 
 
+## v0.1.4 (2023-08-13)
+
+### Ci
+
+* ci: run release only on workflow dispatch ([`85e9505`](https://github.com/matteo4diani/poetry-semantic-release/commit/85e950526f07b3a605286106d4f09eaf58f24506))
+
+### Fix
+
+* fix: yaml format ([`ad04200`](https://github.com/matteo4diani/poetry-semantic-release/commit/ad042006b4b7a1e61cf6273e07f9919f302a00d7))
+
+
 ## v0.1.3 (2023-08-13)
 
 ### Fix
