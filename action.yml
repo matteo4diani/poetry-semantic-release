@@ -1,4 +1,4 @@
-name: 'poetry-semantic-release'
+name: 'semantic-poetry'
 description: 'Release to GitHub and PyPI with poetry and python-semantic-release'
 branding:
   icon: 'box'
