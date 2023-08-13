@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetry-semantic-release"
-version = "0.0.0"
+version = "0.1.0"
 description = "poetry-semantic-release action"
 authors = ["Matteo Fordiani <matteofordiani@gmail.com>"]
 readme = "README.md"
