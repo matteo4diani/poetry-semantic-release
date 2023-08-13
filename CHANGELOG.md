@@ -2,6 +2,13 @@
 
 
 
+## v0.1.1 (2023-08-13)
+
+### Fix
+
+* fix: yaml indentation ([`6b85235`](https://github.com/matteo4diani/poetry-semantic-release/commit/6b852353d65e94632c6262bf1f1c521cfa93f43e))
+
+
 ## v0.1.0 (2023-08-13)
 
 ### Ci
