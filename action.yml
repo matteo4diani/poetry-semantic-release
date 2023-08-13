@@ -43,6 +43,7 @@ runs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
+        ref: ${{ inputs.main-branch }}
 
     - name: Check release status
       id: release-status
@@ -65,8 +66,6 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.github-token }}
       run: |
-        git fetch
-        git rebase origin/main
         semantic-release version
         git fetch --tags
         for file in ./dist/**
