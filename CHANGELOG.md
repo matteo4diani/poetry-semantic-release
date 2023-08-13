@@ -2,6 +2,13 @@
 
 
 
+## v0.1.2 (2023-08-13)
+
+### Fix
+
+* fix: yaml syntax ([`a3c2ff0`](https://github.com/matteo4diani/poetry-semantic-release/commit/a3c2ff0fab32c28814840ec4bacff482c091664c))
+
+
 ## v0.1.1 (2023-08-13)
 
 ### Fix
