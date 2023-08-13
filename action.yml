@@ -36,47 +36,47 @@ runs:
   using: "composite"
 
   steps:
-    - uses: actions/setup-python@v3
-      with:
-        python-version: ${{python-version}}
+  - uses: actions/setup-python@v3
+    with:
+      python-version: ${{python-version}}
 
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+  - uses: actions/checkout@v3
+    with:
+      fetch-depth: 0
 
-    - name: Check release status
-      id: release-status
-      shell: bash
-      env:
-        GH_TOKEN: ${{ github-token }}
-      run: |
-        pip install python-semantic-release
-        if semantic-release --noop --strict version
-        then
-          echo "Releasing new version."
-        else
-          echo "Skipping release steps."
-        fi
+  - name: Check release status
+    id: release-status
+    shell: bash
+    env:
+      GH_TOKEN: ${{ github-token }}
+    run: |
+      pip install python-semantic-release
+      if semantic-release --noop --strict version
+      then
+        echo "Releasing new version."
+      else
+        echo "Skipping release steps."
+      fi
 
-    - if: steps.release-status.outputs.released == 'true'
-      name: Release to GitHub
-      id: github-release
-      shell: bash
-      env:
-        GH_TOKEN: ${{ github-token }}
-      run: |
-        semantic-release version
-        git fetch --tags
-        for file in ./dist/**
-          do gh release upload "${{steps.release-status.outputs.tag}}" $file
-        done
+  - if: steps.release-status.outputs.released == 'true'
+    name: Release to GitHub
+    id: github-release
+    shell: bash
+    env:
+      GH_TOKEN: ${{ github-token }}
+    run: |
+      semantic-release version
+      git fetch --tags
+      for file in ./dist/**
+        do gh release upload "${{steps.release-status.outputs.tag}}" $file
+      done
 
-    - if: steps.release-status.outputs.released == 'true'
-      name: Release to PyPI
-      id: pypi-release
-      shell: bash
-      env:
-        PYPI_TOKEN: ${{ pypi-token }}
-      run: |
-        poetry config pypi-token.pypi $PYPI_TOKEN
-        poetry publish
+  - if: steps.release-status.outputs.released == 'true'
+    name: Release to PyPI
+    id: pypi-release
+    shell: bash
+    env:
+      PYPI_TOKEN: ${{ pypi-token }}
+    run: |
+      poetry config pypi-token.pypi $PYPI_TOKEN
+      poetry publish
