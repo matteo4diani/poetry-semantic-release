@@ -32,6 +32,7 @@ jobs:
             fi
 
       - uses: actions/github-script@v6
+        name: Dispatch CI
         id: dispatch-tests
         if: steps.release-status.outputs.released == 'true'
         with:
