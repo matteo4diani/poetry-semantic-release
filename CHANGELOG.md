@@ -2,6 +2,13 @@
 
 
 
+## v0.1.6 (2023-08-13)
+
+### Fix
+
+* fix: change action name ([`8585350`](https://github.com/matteo4diani/poetry-semantic-release/commit/8585350c1b9f636e8391f0896f012db0ec4d409c))
+
+
 ## v0.1.5 (2023-08-13)
 
 ### Fix
