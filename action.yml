@@ -65,7 +65,8 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.github-token }}
       run: |
-        git pull --no-rebase origin main
+        git fetch
+        git rebase origin/main
         semantic-release version
         git fetch --tags
         for file in ./dist/**
