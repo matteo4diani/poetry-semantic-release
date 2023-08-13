@@ -38,7 +38,7 @@ runs:
   steps:
     - uses: actions/setup-python@v3
       with:
-        python-version: ${{python-version}}
+        python-version: ${{ inputs.python-version }}
 
     - uses: actions/checkout@v3
       with:
@@ -48,7 +48,7 @@ runs:
       id: release-status
       shell: bash
       env:
-        GH_TOKEN: ${{ github-token }}
+        GH_TOKEN: ${{ inputs.github-token }}
       run: |
         pip install python-semantic-release
         if semantic-release --noop --strict version
@@ -63,7 +63,7 @@ runs:
       id: github-release
       shell: bash
       env:
-        GH_TOKEN: ${{ github-token }}
+        GH_TOKEN: ${{ inputs.github-token }}
       run: |
         semantic-release version
         git fetch --tags
@@ -76,7 +76,7 @@ runs:
       id: pypi-release
       shell: bash
       env:
-        PYPI_TOKEN: ${{ pypi-token }}
+        PYPI_TOKEN: ${{ inputs.pypi-token }}
       run: |
         poetry config pypi-token.pypi $PYPI_TOKEN
         poetry publish
