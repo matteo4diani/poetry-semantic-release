@@ -2,6 +2,13 @@
 
 
 
+## v0.1.3 (2023-08-13)
+
+### Fix
+
+* fix: input variables usage ([`f863f2a`](https://github.com/matteo4diani/poetry-semantic-release/commit/f863f2a3fa3f700c0b03b676e5d12cd7ff8f1829))
+
+
 ## v0.1.2 (2023-08-13)
 
 ### Fix
